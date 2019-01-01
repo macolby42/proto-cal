@@ -1,0 +1,82 @@
+$title-font: 'Staatliches', cursive;
+$body-font: 'Lato', sans-serif;
+
+$body-size: 3.5vh;
+$title-size: 7.5vh;
+$card-width: 92vw;
+$card-height: 40vh;
+
+$mint: #95B2A1;
+$title-color: #EFECCA;
+$dark-background: #5E565A;
+$light-background: #DFDFDF;
+
+.main {
+  background: $dark-background;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+
+.title-div {
+  white-space: nowrap;
+  // width: 100vw;
+  padding-left: (100vw-$card-width)/2;
+  text-align: left;
+}
+
+.card-title {
+  margin: 0px;
+  color: $title-color;
+  font-family: $title-font;
+  font-size: $title-size;
+}
+
+.card-header {
+  border-radius: 5px 5px 0px 0px;
+  background-color: $mint;
+  padding-top: 1vh;
+  padding-left: 0.75vw;
+  height: 10vh;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: $dark-background;
+}
+
+
+.card, .card-today {
+  opacity: 0.2;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+  border-radius: 5px;
+  background-color: $light-background;
+  margin: 10px;
+  width: $card-width;
+  height: $card-height;
+  text-align: left;
+  display: inline-block;
+}
+
+.card-today {
+  opacity: 1.0;
+}
+
+.card-info {
+  font-family: $body-font;
+  font-size: $body-size;
+  width: 100%;
+}
+
+.card-info li {
+  padding: 0px;
+  text-align: left;
+}
+
+.card-info ul {
+  width: 100%;
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import DayCard from './components/day-card/day-card';
+import {Card, Title} from './components/day-card/day-card';
 
 // function Square(props) {
 //   return (
@@ -43,9 +43,13 @@ import DayCard from './components/day-card/day-card';
 // }
 
 class App extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor(props) {
+    super(props);
+    this.days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    var d = new Date();
+    var today = d.getDay();
+    this.today = this.days[today];
+  }
 
   // handleClick(i) {
   //   const history = this.state.history.slice(0, this.state.stepNumber + 1);
@@ -76,11 +80,14 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <DayCard value={"Monday"} />
-        <DayCard value={"Tuesday"} />
-        <DayCard value={"Wednesday"} />
-        <DayCard value={"Thursday"} />
-        <DayCard value={"Friday"} />
+        <div className="title-div">
+          <Title value={"Workout Calendar"} />
+        </div>
+        <Card today={this.today} value={"Monday"} list={[{"workout": "pushups", "reps": 10 }, {"workout": "situps", "reps": 10}, {"workout": "bumbbells", "reps": 10}]} />
+        <Card today={this.today} value={"Tuesday"} list={[{"workout": "2 rep"}]} />
+        <Card today={this.today} value={"Wednesday"} list={[{"workout": "3 rep"}]} />
+        <Card today={this.today} value={"Thursday"} list={[{"workout": "4 rep"}]} />
+        <Card today={this.today} value={"Friday"} list={[{"workout": "5 rep"}]} />
       </div>
     );
   };
